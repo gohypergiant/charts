@@ -2,6 +2,11 @@ nginx-ingress-controller:
   enabled: false
 
 jupyterhub:
+  prePuller:
+    hook:
+      enabled: false
+    continuous:
+      enabled: false
   proxy:
     service:
       type: ClusterIP
