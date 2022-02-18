@@ -65,7 +65,7 @@ jupyterhub:
         minimum_password_length: 10
         check_common_password: true
         ask_email_on_signup: false
-        allow_2fa: false
+        allow_2fa: true
     allowNamedServers: true
     redirectToServer: false
     namedServerLimitPerUser: 2
