@@ -3,6 +3,24 @@ entries:
   firefly:
   - apiVersion: v2
     appVersion: 0.2.0
+    created: "2022-02-18T19:33:05.58213115Z"
+    dependencies:
+    - condition: nginx-ingress-controller.enabled
+      name: nginx-ingress-controller
+      repository: https://charts.bitnami.com/bitnami
+      version: 7.6.21
+    - name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 1.1.3-n097.hb6688f54
+    description: Hyperdrive Notebooks and Community Edition
+    digest: 02607819812cdd0e7f8367cafda018ec6c237dff594ff8a86399ad6de1fe072d
+    name: firefly
+    type: application
+    urls:
+    - https://github.com/gohypergiant/charts/releases/download/firefly-0.2.2/firefly-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.2.0
     created: "2022-02-14T19:43:43.440677662Z"
     dependencies:
     - condition: nginx-ingress-controller.enabled
@@ -19,4 +37,4 @@ entries:
     urls:
     - https://github.com/gohypergiant/charts/releases/download/firefly-0.2.1/firefly-0.2.1.tgz
     version: 0.2.1
-generated: "2022-02-14T19:43:43.440690562Z"
+generated: "2022-02-18T19:33:05.58214555Z"
