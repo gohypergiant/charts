@@ -14,6 +14,41 @@ jupyterhub:
     image:
       name: jupyterhub/k8s-singleuser-sample
       tag: 1.1.2-n020.h2568a1c3
+    profileList:
+      - display_name: "Minimal"
+        description: "Minimal single-user notebook"
+        default: true
+      - display_name: "Hugging Face + Pytorch (CPU)"
+        description: "Hugging Face with Pytorch, CPU only."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-huggingface-pytorch"
+          http_timeout: 3600
+      - display_name: "Spark (CPU)"
+        description: "Apache Spark, CPU only."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-spark"
+          http_timeout: 3600
+      - display_name: "Pytorch (CPU)"
+        description: "Pytorch, CPU only."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-pytorch"
+          http_timeout: 3600
+      - display_name: "XGBoost (CPU)"
+        description: "XGBoost, CPU only."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-xgboost"
+          http_timeout: 3600
+      - display_name: "Tensorflow (CPU)"
+        description: "Tensorflow, CPU only."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-tensorflow"
+          http_timeout: 3600
+      - display_name: "Hugging Face + Tensorflow (CPU)"
+        description: "Hugging Face and Tensorflow, CPU only."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-huggingface-tensorflow"
+          http_timeout: 3600
+
   hub:
     image:
       name: jupyterhub/k8s-hub
@@ -30,7 +65,7 @@ jupyterhub:
         minimum_password_length: 10
         check_common_password: true
         ask_email_on_signup: false
-        allow_2fa: false
+        allow_2fa: true
     allowNamedServers: true
     redirectToServer: false
     namedServerLimitPerUser: 2
