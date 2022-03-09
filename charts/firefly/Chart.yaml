@@ -2,8 +2,8 @@ apiVersion: v2
 name: firefly
 description: Hyperdrive Notebooks and Community Edition
 type: application
-version: 0.2.6
-appVersion: "0.2.6"
+version: 0.2.7
+appVersion: "0.2.7"
 dependencies:
   - name: nginx-ingress-controller
     repository: https://charts.bitnami.com/bitnami
