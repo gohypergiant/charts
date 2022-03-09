@@ -108,9 +108,9 @@
 1. Install prerequisites.
 2. Add the helm repo
    ```sh
-   helm repo add firefly https://gohypergiant.github.io/firefly
+   helm repo add hypergiant https://gohypergiant.github.io/charts
    ```
-3. Install the helm chart with `helm install firefly firefly/firefly`. Be sure to include your customized values file.
+3. Install the helm chart with `helm install hypergiant charts/firefly`. Be sure to include your customized values file.
 
 4. The stack takes approximately 2 minutes to install. After that, navigate to `http://localhost:8090/` or the ingress host specified in your values file to access Firefly.
 
