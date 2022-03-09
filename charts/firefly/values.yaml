@@ -29,7 +29,7 @@ jupyterhub:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-huggingface-pytorch"
           http_timeout: 3600
           image_pull_policy: "Always"
-      - display_name: "Spark (CPU)"
+      - display_name: "Apache Spark (CPU)"
         description: "Apache Spark, CPU only."
         kubespawner_override:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-spark"
