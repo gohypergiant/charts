@@ -29,36 +29,42 @@ jupyterhub:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-huggingface-pytorch"
           http_timeout: 3600
           image_pull_policy: "Always"
+          command: ["sh","-c", "entrypoint.sh"]          
       - display_name: "Apache Spark (CPU)"
         description: "Apache Spark, CPU only."
         kubespawner_override:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-spark"
           http_timeout: 3600
           image_pull_policy: "Always"
+          command: ["sh","-c", "entrypoint.sh"]          
       - display_name: "Pytorch (CPU)"
         description: "Pytorch, CPU only."
         kubespawner_override:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-pytorch"
           http_timeout: 3600
           image_pull_policy: "Always"
+          command: ["sh","-c", "entrypoint.sh"]
       - display_name: "XGBoost (CPU)"
         description: "XGBoost, CPU only."
         kubespawner_override:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-xgboost"
           http_timeout: 3600
           image_pull_policy: "Always"
+          command: ["sh","-c", "entrypoint.sh"]          
       - display_name: "Tensorflow (CPU)"
         description: "Tensorflow, CPU only."
         kubespawner_override:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-tensorflow"
           http_timeout: 3600
           image_pull_policy: "Always"
+          command: ["sh","-c", "entrypoint.sh"]          
       - display_name: "Hugging Face + Tensorflow (CPU)"
         description: "Hugging Face and Tensorflow, CPU only."
         kubespawner_override:
           image: "ghcr.io/gohypergiant/hypergiant-jupyter:cpu-huggingface-tensorflow"
           http_timeout: 3600
           image_pull_policy: "Always"
+          command: ["sh","-c", "entrypoint.sh"]          
 
   hub:
     image:
