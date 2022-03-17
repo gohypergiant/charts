@@ -14,6 +14,7 @@ jupyterhub:
     enabled: true
   singleuser:
     defaultUrl: "/lab"
+    startTimeout: 3600 # large images + GPUs take up to 15 minutes to provision
     extraEnv:
       JUPYERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
     image:
@@ -65,6 +66,15 @@ jupyterhub:
           http_timeout: 3600
           image_pull_policy: "Always"
           cmd: "/usr/local/bin/entrypoint.sh"
+      - display_name: "Hugging Face + Tensorflow (GPU)"
+        description: "Hugging Face and Tensorflow with GPU."
+        kubespawner_override:
+          image: "ghcr.io/gohypergiant/hypergiant-jupyter:gpu-huggingface-tensorflow"
+          http_timeout: 3600
+          image_pull_policy: "Always"
+          cmd: "/usr/local/bin/entrypoint.sh"
+          extra_resource_limits:
+            nvidia.com/gpu: "1"
 
   hub:
     image:
