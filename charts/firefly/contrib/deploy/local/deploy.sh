@@ -14,12 +14,10 @@ IMAGE_VERSION="rancher/k3s:v1.21.5-k3s2"
 # k3s version must be 1.21.4 or better to avoid local-path permissions bug
 #k3d registry create ${REGISTRY_NAME}.localhost -p ${REGISTRY_PORT} ;
 k3d cluster create ${CLUSTER_NAME} \
-  -p 8090:80@loadbalancer \
-  --image ${IMAGE_VERSION} \
+  -p "8090:80@loadbalancer" \
   --servers ${SERVER_COUNT} \
   --agents ${AGENT_COUNT} \
   --kubeconfig-update-default=true \
-  --k3s-arg "--disable=traefik@server:0"
 
 # merge the kubeconfig into the default location
 k3d kubeconfig merge -d firefly
